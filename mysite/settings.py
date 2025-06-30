@@ -12,20 +12,31 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
+import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+# Initialise environment variables
+DEBUG = True
+# env = environ.Env(
+#     DEBUG=(bool, True)
+# )
+# environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-65mc^abzzl@)2_i-ck$o8d3&z#@mtprvtzx$uw5xn*d$s3ob@m'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = []
+SECRET_KEY = 'm97(x8yy^^rri*e**87ut9)iq)clqoiznfwnieu-nx&9-z-p0b'
+# ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
+
 
 
 # Application definition
@@ -110,6 +121,14 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+# Security: HTTP Strict Transport Security
+# SECURE_SSL_REDIRECT = env.bool('SECURE_SSL_REDIRECT', default=False)
+# SECURE_HSTS_SECONDS = env.int('SECURE_HSTS_SECONDS', default=0)
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool('SECURE_HSTS_INCLUDE_SUBDOMAINS', default=False)
+# SECURE_HSTS_PRELOAD = env.bool('SECURE_HSTS_PRELOAD', default=False)
+# SESSION_COOKIE_SECURE = env.bool('SESSION_COOKIE_SECURE', default=False)
+# CSRF_COOKIE_SECURE = env.bool('CSRF_COOKIE_SECURE', default=False)
 
 
 # Static files (CSS, JavaScript, Images)
